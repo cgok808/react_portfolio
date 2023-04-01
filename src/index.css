@@ -1,13 +1,192 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+/* 
+ APPWIDE 
+  FEATURES 
+  */
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+
+  /* background-color: rgb(245, 245, 245);
+  transition: all 300ms ease; */
+  /* buggy atm, could be my on my end though and need to ccc */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* section {
+  background-color: rgb(245, 245, 245);
+  transition: all 300ms ease;
+}
+
+buggy atm ? */
+
+input,
+textarea {
+  width: 100%;
+  background-color: #242424;
+  color: #fff;
+  outline: none;
+  border: 3px solid #c0c4cc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 40px;
+  transition: all 300ms ease;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+  margin-top: 8px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input:hover,
+textarea:hover {
+  border-color: #dcdfe6;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #e4991d;
+}
+
+/* 
+ ANIMATION 
+ */
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animate-logo {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 
+ NAVIGATION 
+ */
+
+nav {
+  height: 15vh;
+}
+
+.logo {
+  box-shadow: 0 8px 16px rgb(0 0 0 / 16%);
+  /* animation: animate-logo 800ms 200ms backwards; */
+  /* ^^ Amim kinda buggy on FireFox... Works nice on Chromium browsers Not sure  */
+  animation: fade-up 650ms 200ms backwards;
+}
+
+.nav__link--list {
+  display: flex;
+  animation: fade-up 650ms 200ms backwards;
+}
+
+.subtitle__hover {
+  position: relative;
+}
+
+.subtitle__hover:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  right: 0;
+  transition: all 300ms ease;
+  background-color: #000000;
+}
+
+.subtitle__hover:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+/* 
+HERO
+ PAGE
+  CONTENT 
+  */
+
+header {
+  height: 85vh;
+}
+
+.title {
+  animation: fade-up 650ms 400ms backwards;
+}
+
+.header__para {
+  animation: fade-up 650ms 600ms backwards;
+}
+
+.header__para-secondary {
+  animation: fade-up 650ms 620ms backwards;
 }
