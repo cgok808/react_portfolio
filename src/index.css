@@ -85,6 +85,53 @@ textarea:focus {
  ANIMATION 
  */
 
+.subtitle__hover {
+  position: relative;
+}
+
+.subtitle__hover:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  right: 0;
+  transition: all 300ms ease;
+  background-color: #000000;
+}
+
+.subtitle__hover:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+.link__hover-effect {
+  position: relative;
+}
+
+.link__hover-effect:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  right: 0;
+  transition: all 300ms ease;
+}
+
+.link__hover-effect--white:after {
+  background-color: #fff;
+}
+
+.link__hover-effect--black:after {
+  background-color: #242424;
+}
+
+.link__hover-effect:hover:after {
+  left: 0;
+  width: 100%;
+}
+
 .transition__ease {
   transition: all 300ms ease;
 }
@@ -150,26 +197,6 @@ nav {
 .nav__link--list {
   display: flex;
   animation: fade-up 650ms 200ms backwards;
-}
-
-.subtitle__hover {
-  position: relative;
-}
-
-.subtitle__hover:after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  height: 2px;
-  width: 0;
-  right: 0;
-  transition: all 300ms ease;
-  background-color: #000000;
-}
-
-.subtitle__hover:hover:after {
-  left: 0;
-  width: 100%;
 }
 
 /* 
@@ -306,4 +333,58 @@ header {
 
 .project__description--para {
   margin: 16px 0;
+}
+
+/* 
+ FOOTER 
+ */
+
+footer {
+  position: relative;
+  background-color: #242424;
+  display: flex;
+  padding: 6% 0;
+}
+
+.footer__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__logo--img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.footer__social--list {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-around;
+  margin: 28px 0;
+}
+
+.footer__social--link,
+.footer__copyright {
+  color: white;
+}
+
+.footer__logo--popper {
+  position: absolute;
+  right: 0;
+  top: 16px;
+  font-weight: 700;
+  opacity: 0;
+  transition: all 300ms ease;
+  color: white;
+}
+
+.footer__anchor {
+  position: relative;
+}
+
+.footer__anchor:hover .footer__logo--popper {
+  transform: translateX(72px);
+  opacity: 1;
 }

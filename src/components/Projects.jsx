@@ -1,7 +1,6 @@
 import React from "react";
 import { AiOutlineGithub } from "react-icons/ai";
 import { HiLink } from "react-icons/hi";
-import theimage from "../assets/library.png";
 
 const ProjectCard = ({
   id,
